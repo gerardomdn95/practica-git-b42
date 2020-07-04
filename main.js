@@ -7,14 +7,8 @@ const obtenBanda = (banda) => {
     if (error) {
       console.log('Ocurrió un error');
     } else {
-      // console.log('No hay error');
-      // console.log(response.statusCode);
-      // Parse JSON
       const res = JSON.parse(body);
       if (res.artists !== null) {
-        // console.log(res.artists[0].strArtist);
-        // console.log(res.artists[0].strWebsite);
-        // console.log(res.artists[0].strBiographyES);
         const { strArtist, strWebsite, intFormedYear, strGenre } = res.artists[0];
         const nuevaBanda = new Banda(
           strArtist,
